@@ -35,14 +35,15 @@ def audioresample(wavname,I,D,P):
     return resample_audio
 
 #the samplerate of test wav is 16k
-wavname='./test.wav'
-resample_audio=audioresample(wavname,3,1,10)
-resample_audio=resample_audio.astype('float32')
-wavfile.write('./resampleout1.wav',48000,resample_audio)
-resample_audio=audioresample(wavname,1,2,10)
-resample_audio=resample_audio.astype('float32')
-wavfile.write('./resampleout2.wav',8000,resample_audio)
-resample_audio=audioresample(wavname,3,2,10)
-resample_audio=resample_audio.astype('float32')
-wavfile.write('./resampleout3.wav',24000,resample_audio)
+if __name__=='__main__':
+    wavname='./test.wav'
+    resample_audio=audioresample(wavname,3,1,10)
+    resample_audio=resample_audio.astype('float32')
+    wavfile.write('./resampleout1.wav',48000,resample_audio)
+    resample_audio=audioresample(wavname,1,2,10)
+    resample_audio=resample_audio.astype('float32')
+    wavfile.write('./resampleout2.wav',8000,resample_audio)
+    resample_audio=audioresample(wavname,3,2,10)
+    resample_audio=resample_audio.astype('float32')
+    wavfile.write('./resampleout3.wav',24000,resample_audio)
 
